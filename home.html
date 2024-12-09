@@ -1,0 +1,764 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .star {
+      color: gray;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .overflow-x-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .star.active {
+      color: gold;
+    }
+
+    /* Gradient background for footer */
+    .footer {
+      background: linear-gradient(135deg, #333 0%, #555 50%, #222 100%);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .tive {
+      background-color: #36494E;
+      color: #fff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    button .active {
+      background-color: #36494E;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    /* Social media icons styling */
+    .social-media {
+      margin-top: 15px;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+      display: inline-block;
+      transition: opacity 0.3s;
+      color: #fff;
+    }
+
+    .social-media a img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-media a:hover {
+      opacity: 0.7;
+    }
+
+    .bg-utama {
+      background-color: #A9CEF4;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-transparant container-fluid">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand display-6 fw-semibold" href="#"><span style="color: #A9CEF4;">Blue Wave</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tracking.html">Tracking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasRight2" role="button"
+                aria-controls="offcanvasRight">History Pesanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="checkout.html">Keranjang</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <a class="text-decoration-none nav-link" data-bs-toggle="offcanvas" href="#offcanvasRight1" role="button"
+              aria-controls="offcanvasRight">
+              <i class="bi bi-person-circle"></i> Profil
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- offcanvas profil -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Profil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex flex-wrap h-100">
+          <div class="h-50 w-100 pt-5" style="background-color: #A9CEF4; text-align: center;">
+            <img src="img/674b5d88d5343.jpeg" class="img-thumbnail img-fluid rounded-circle" width="150px" alt="...">
+            <p class="text-light fw-semibold fs-4">Dila</p>
+          </div>
+          <div class="h-50 w-100 border">
+            <div class="container px-4 pt-3">
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Username</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" disabled placeholder="Dila">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Telephone</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" disabled placeholder="085728184370">
+              </div>
+              <div class="d-flex justify-content-end">
+                <a href="profilEdit.html" class="text-decoration-none text-success mx-4"><i
+                    class="bi bi-pencil-square"></i> Edit</a>
+                <a href="index.html" class="text-decoration-none text-danger"><i class="bi bi-box-arrow-right"></i> Log
+                  Out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas history -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">History Pesanan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container-fluid py-1">
+          <div class="row bg-utama py-1 rounded shadow ">
+            <div class="col-3">
+              <img src="img/kwetiau.jpg" class="img-fluid img-thumbnail rounded" alt="">
+            </div>
+            <div class="col-7">
+              <p class="m-0 fw-semibold">Kwetiau</p>
+              <p class="m-0" style="font-size: 0.8rem;">Pedas, Sosis, Large</p>
+              <p class="m-0 text-success" style="font-size: 0.7rem;">Rp.45.000,00</p>
+            </div>
+            <div class="col-2">
+              <p class="m-0">x3</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid py-1">
+          <div class="row bg-utama py-1 rounded shadow ">
+            <div class="col-3">
+              <img src="img/bakmi.jpg" class="img-fluid img-thumbnail rounded" alt="">
+            </div>
+            <div class="col-7">
+              <p class="m-0 fw-semibold">Bakmi</p>
+              <p class="m-0" style="font-size: 0.8rem;">Pedas, Sosis, Large</p>
+              <p class="m-0 text-success" style="font-size: 0.7rem;">Rp.60.000,00</p>
+            </div>
+            <div class="col-2">
+              <p class="m-0">x3</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid py-1">
+          <div class="row bg-utama py-1 rounded shadow ">
+            <div class="col-3">
+              <img src="img/Esteler.jpg" class="img-fluid img-thumbnail rounded" alt="">
+            </div>
+            <div class="col-7">
+              <p class="m-0 fw-semibold">Es Teler</p>
+              <p class="m-0" style="font-size: 0.8rem;">Es, Susu Coklat, Large</p>
+              <p class="m-0 text-success" style="font-size: 0.7rem;">Rp.6.000,00</p>
+            </div>
+            <div class="col-2">
+              <p class="m-0">x3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- carosel -->
+    <div id="carouselExampleInterval" class="carousel slide p-4 container-fluid" data-bs-ride="carousel">
+      <div class="carousel-inner container-fluid ">
+        <div class="carousel-item active shadow" data-bs-interval="10000">
+          <div class="d-block w-100 rounded"
+            style="height: 35vh; background:linear-gradient(20deg,#36494E 30% ,#A9CEF4 70%) ;"></div>
+        </div>
+        <div class="carousel-item shadow" data-bs-interval="2000">
+          <div class="d-block w-100 rounded"
+            style="height: 35vh; background:linear-gradient(20deg,#36494E 30% ,#A9CEF4 70%) ;"></div>
+        </div>
+        <div class="carousel-item shadow">
+          <div class="d-block w-100 rounded"
+            style="height: 35vh; background:linear-gradient(20deg,#36494E 30% ,#A9CEF4 70%) ;"></div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- rekomendasi -->
+    <div class="container-fluid">
+      <div class="container-fluid px-4">
+        <div class="d-flex justify-content-between py-3">
+          <h3>Rekomendasi</h3>
+          <p>See All</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- produk -->
+    <div class="container-fluid">
+      <div class="overflow-x-scroll d-flex px-4" style="width: 100%;">
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/bakmi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Bakmi</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 20.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/buburayam.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Bubur Ayam</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 10.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/donat.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Donat</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 4.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/Esteler.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Es Teler</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 12.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/gohyong.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Gohyong</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 14.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/jusjambu.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Jus Jambu</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 7.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/kwetiau.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Kwetiau</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 15.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/miejudes.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Mie Judes</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 25.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- category -->
+    <div class="container-fluid">
+      <div class="container-fluid px-4">
+        <div class="d-flex justify-content-between">
+          <h3>Category</h3>
+          <p>See All</p>
+        </div>
+        <form action="home.html" method="post">
+          <div class="d-flex my-2 ">
+            <button type="submit" class="mx-3 rounded-pill border-0 px-3 py-2 tive " style=" width:120px" name="submit"
+              id="vbtn-radio2" value="breakfast">Breakfast</button>
+            <button type="submit" class="mx-3 rounded-pill border-0 px-3 py-2 " style=" width:120px" name="submit"
+              id="vbtn-radio2" value="lauch">Lauch</button>
+            <button type="submit" class="mx-3 rounded-pill border-0 px-3 py-2 " style=" width:120px" name="submit"
+              id="vbtn-radio3" value="dinner">Dinner</button>
+            <button type="submit" class="mx-3 rounded-pill border-0 px-3 py-2 " style=" width:120px" name="submit"
+              id="vbtn-radio4" value="popular">Popular</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- produk -->
+    <div class="container-fluid">
+      <div class="overflow-x-scroll d-flex px-4" style="width: 100%;">
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/ramene.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Ramen</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 28.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/seblak.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Seblak</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 12.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/siomay.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Siomay</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 8.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/steak.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Steak</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 30.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/bakmi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Bakmi</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 20.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/buburayam.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Bubur Ayam</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 10.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/donat.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Donat</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 4.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/Esteler.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Es Teler</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 12.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/gohyong.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Gohyong</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 14.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/jusjambu.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Jus Jambu</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 7.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/kwetiau.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Kwetiau</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 15.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-4 pe-2">
+          <div class="card shadow p-0 mb-5 bg-body-tertiary rounded border-0" style="width: 15rem;">
+            <img src="img/miejudes.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="d-flex justify-content-between product" id="product1">
+                <h5 class="card-title">Mie Judes</h5>
+                <div class="rating">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                </div>
+              </div>
+              <p class="card-text text-success">Rp. 25.000,00</p>
+              <div class="d-flex justify-content-end">
+                <a href="order.html" class="btn btn-secondary text-end"><i class="bi bi-cart4"></i> Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Luuky. Desain dan Implementasi Sistem.</p>
+        <div class="social-media">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    // Fungsi untuk toggle rating di container produk tertentu
+    function toggleRating(container, rating) {
+      // Dapatkan semua elemen bintang dalam container produk tertentu
+      const stars = container.getElementsByClassName('star');
+
+      // Loop untuk mengatur status bintang di container yang sesuai
+      for (let i = 0; i < stars.length; i++) {
+        // Tambahkan atau hapus kelas 'active' berdasarkan rating yang dipilih
+        if (i < rating) {
+          stars[i].classList.add('active');
+          stars[i].textContent = '★';
+        } else {
+          stars[i].classList.remove('active');
+          stars[i].textContent = '☆';
+        }
+      }
+    }
+
+    // Event listener untuk setiap bintang di setiap produk
+    document.querySelectorAll('.product').forEach(product => {
+      const stars = product.getElementsByClassName('star');
+      Array.from(stars).forEach((star, index) => {
+        star.addEventListener('click', () => toggleRating(product, index + 1));
+      });
+    });
+
+    // Pilih semua tombol di dalam div dengan class "d-flex"
+    const buttons = document.querySelector('button[value="<?= $value; ?>"]');
+
+    buttons.classList.add('active');
+  </script>
+</body>
+
+</html>

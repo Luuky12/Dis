@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .note p {
+      margin: 5px;
+    }
+
+    .containe {
+      position: relative;
+      width: 80px;
+      height: 250px;
+      /* Kurangi tinggi container */
+    }
+
+    .line {
+      position: absolute;
+      left: 62.5%;
+      top: 10px;
+      width: 2px;
+      height: 180px;
+      /* Sesuaikan dengan tinggi container */
+      background-color: #43936C;
+      transform: translateX(-50%);
+    }
+
+    .point {
+      width: 20px;
+      height: 20px;
+      background-color: #43936C;
+      border-radius: 50%;
+      position: absolute;
+      left: 40px;
+      top: 0;
+      transition: all 2s ease;
+    }
+
+    .point.t2 {
+      top: 90px;
+      /* Posisi titik 2 */
+    }
+
+    .point.t3 {
+      top: 180px;
+      /* Posisi titik 3 */
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #acacac;
+      border-radius: 50%;
+      position: absolute;
+      left: 45px;
+      transition: all 0.5s ease;
+    }
+
+    .dot.active {
+      background-color: #43936C;
+    }
+
+    .dot:nth-child(1) {
+      top: 10px;
+    }
+
+    .dot:nth-child(2) {
+      top: 100px;
+    }
+
+    .dot:nth-child(3) {
+      top: 190px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container py-3">
+    <a href="home.html" class="text-decoration-none text-dark">
+      <h3><i class="bi bi-arrow-left"></i> Kembali</h3>
+    </a>
+    <div class="row">
+      <div class="col-12 col-sm-6 px-5 note">
+        <div class="px-4 pt-1 pb-4 mt-2 border rounded shadow">
+          <p class="text-center display-2 m-0 text-success "><i class="bi bi-check-circle-fill "></i></p>
+
+          <p class="text-center fs-3 m-0 fw-semibold">Thank You</p>
+          <p class="text-center">Your Transaktion was successful</p>
+          <div class="d-flex justify-content-between">
+            <p class="fw-medium">ID Transaction</p>
+            <p>123456789aaa</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="fw-medium">Date</p>
+            <p>03-Desember-2024</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="fw-medium">Time</p>
+            <p>18.20</p>
+          </div>
+          <hr>
+          <div class="pb-3">
+            <p class="fw-semibold">Item</p>
+            <div class="d-flex justify-content-between ">
+              <div>
+                <p class="fw-medium">Kwetiau</p>
+                <p style="font-size: 0.7rem;">Large, Pedas, Sosis</p>
+              </div>
+              <p class="fw-medium">x3</p>
+            </div>
+            <div class="d-flex justify-content-between ">
+              <div>
+                <p class="fw-medium">Bakmi</p>
+                <p style="font-size: 0.7rem;">Large, Pedas, Sosis</p>
+              </div>
+              <p class="fw-medium">x1</p>
+            </div>
+            <div class="d-flex justify-content-between ">
+              <div>
+                <p class="fw-medium">Es Teler</p>
+                <p style="font-size: 0.7rem;">Sedang, Ice, Susu Coklat</p>
+              </div>
+              <p class="fw-medium">x1</p>
+            </div>
+          </div>
+          <p class="fw-semibold">Payment Summary</p>
+          <div class="">
+            <div class="d-flex justify-content-between">
+              <p>Harga</p>
+              <p>Rp.77.000,00</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>Voucer</p>
+              <p>0</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="fw-medium">Total</p>
+              <p class="fw-medium">Rp.77.000,00</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="fw-medium">Payment Method</p>
+              <p>Gopay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-5 p-2 ">
+        <div class="border rounded p-2 shadow">
+
+          <div class="row align-items-center mb-3 px-2">
+            <div class="col-3">
+              <img src="img/kwetiau.jpg" class="img-fluid rounded " alt="">
+            </div>
+            <div class="col-6">
+              <p class="fs-5">Kwetiau</p>
+              <p style="font-size: 0.7rem;">Large, Pedas, Sosis</p>
+            </div>
+            <div class="col-3">
+              <p class="text-end m-0 text-success">Rp.45.000,00</p>
+              <p class="text-end m-0">x3</p>
+            </div>
+          </div>
+          <div class="row align-items-center mb-3 px-2">
+            <div class="col-3">
+              <img src="img/bakmi.jpg" class="img-fluid rounded " alt="">
+            </div>
+            <div class="col-6">
+              <p class="fs-5">Bakmi</p>
+              <p style="font-size: 0.7rem;">Large, Pedas, Sosis</p>
+            </div>
+            <div class="col-3">
+              <p class="text-end m-0 text-success">Rp.20.000,00</p>
+              <p class="text-end m-0">x1</p>
+            </div>
+          </div>
+          <div class="row align-items-center mb-3 px-2">
+            <div class="col-3">
+              <img src="img/Esteler.jpg" class="img-fluid rounded " alt="">
+            </div>
+            <div class="col-6">
+              <p class="fs-5">Es Teler</p>
+              <p style="font-size: 0.7rem;">Sedang, Ice, Susu Coklat</p>
+            </div>
+            <div class="col-3">
+              <p class="text-end m-0 text-success">Rp.12.000,00</p>
+              <p class="text-end m-0">x1</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="pt-3 ">
+          <div class="border-bottom">
+            <p>Receipt Order ></p>
+          </div>
+          <div class="d-flex py-4 ">
+            <div class="containe">
+              <!-- Garis lintasan -->
+              <div class="line">
+              </div>
+              <div class="dot">
+              </div>
+              <div class="dot">
+
+              </div>
+              <div class="dot active"></div>
+
+              <!-- Titik yang bergerak -->
+              <div class="point" style="text-align: center;"></div>
+            </div>
+            <div>
+              <p class="pb-5"> Restaurant Take Your Order</p>
+              <p class="pb-5"> Prepare Your Order</p>
+              <p class="pb-1"> Your Order is Complete. <br> Please pick it up at the restaurant</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-sm-end">
+            <form action="" method="post">
+
+              <a href="home.html" class="btn btn-secondary rounded-pill px-4" >Take Order</a>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+
+
+
+  <script>
+    const point = document.querySelector('.point');
+    const dots = document.querySelectorAll('.dot');
+
+    // Animasi dengan interval
+    let step = 1;
+
+    const interval = setInterval(() => {
+      if (step === 1) {
+        point.classList.add('t2'); // Pindah ke titik 2
+        setTimeout(() => {
+          dots[0].classList.add('active');
+        }, 1000); // Tambahkan jeda agar perubahan lebih mulus
+        step++;
+      } else if (step === 2) {
+        point.classList.remove('t2');
+        point.classList.add('t3'); // Pindah ke titik 3
+        setTimeout(() => {
+          dots[1].classList.add('active'); // Step 2 jadi biru
+        }, 1000);
+        step++;
+      } else {
+        dots[2].classList.add('active'); // Step 3 jadi biru
+        clearInterval(interval); // Hentikan animasi di langkah ke-3
+      }
+    }, 2000); // Interval 2 detik
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

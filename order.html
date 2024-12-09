@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .number-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .number-input button {
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border: #ddd;
+        }
+
+        .number-input input {
+            width: 50px;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="" method="post">
+            <div class="container p-2">
+                <a href="home.html" class="text-decoration-none text-dark">
+                    <h3><i class="bi bi-arrow-left"></i> Kembali</h3>
+                </a>
+                <h3 class="text-center">Order</h3>
+            </div>
+            <div class="d-flex justify-content-center container pt-2" id="wrap">
+                <div class="container-fluid pb-2">
+                    <div class="p-5 img-thumbnail" style="background-color: #64909B;">
+                        <img src="img/Esteler.jpg" class="shadow img-fluid" alt="...">
+                    </div>
+                </div>
+                <div class="px-2 container-fluid">
+                    <div class="p-4 pb-2 mb-3 border rounded shadow ">
+                        <p>Drink
+                        <p>
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-4">Es Teler</p>
+                            <div>
+                                <div class="number-input">
+                                    <button type="button" onclick="decreaseValue()">-</button>
+                                    <input type="text" id="numberInput" name="jumlah" value="1">
+                                    <button type="button" onclick="increaseValue()">+</button>
+                                </div>
+                                <p class="text-success text-center">Rp.12.000,00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pb-2 mb-3 border rounded shadow container-fluid">
+                        <p class="fs-7">customize</p>
+                        <div class="d-flex justify-content-between mb-1">
+                            <p>Variant</p>
+                            <div>
+                                <input type="radio" class="btn-check" name="variant" id="variant1" autocomplete="off" value="Ice" checked>
+                                <label class="btn btn-outline-secondary " for="variant1">Ice</label>
+                                <input type="radio" class="btn-check" name="variant" id="variant2" autocomplete="off" value="Hot">
+                                <label class="btn btn-outline-secondary " for="variant2">Hot</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <p>Size</p>
+                            <div>
+                                <input type="radio" class="btn-check" name="size" id="size1" autocomplete="off" value="Kecil">
+                                <label class="btn btn-outline-secondary" for="size1">Kecil</label>
+                                <input type="radio" class="btn-check" name="size" id="size2" autocomplete="off" value="Sedang">
+                                <label class="btn btn-outline-secondary" for="size2">Sedang</label>
+                                <input type="radio" class="btn-check" name="size" id="size3" autocomplete="off" value="Large" checked>
+                                <label class="btn btn-outline-secondary" for="size3">Large</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mb-1">
+                            <p>Toping</p>
+                            <div>
+                                <input type="radio" class="btn-check" name="sugar" id="sugar1" autocomplete="off" value="Susu Vanila">
+                                <label class="btn btn-outline-secondary" for="sugar1">Susu Vanila</label>
+                                <input type="radio" class="btn-check" name="sugar" id="sugar2" autocomplete="off" value="Susu Coklat" checked>
+                                <label class="btn btn-outline-secondary" for="sugar2">Susu Coklat</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p>Total</p>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <label for="total">Rp.</label>
+                                <input type="number" class="border-0 total" style="background-color: #fff;" disabled value="12000">
+                                <input type="hidden" class="total" value="" name="total">
+                            </div>
+                            <a href="home.html" class="btn btn-secondary"><i class="bi bi-cart4"></i> Add</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Fungsi untuk menambahkan atau menghapus kelas berdasarkan ukuran layar
+        function toggleResponsiveClass() {
+            const element = document.getElementById('wrap');
+            if (window.innerWidth < 780) {
+                element.classList.add('flex-wrap'); // Tambahkan kelas jika layar kurang dari 768px
+            } else {
+                element.classList.remove('flex-wrap'); // Hapus kelas jika layar lebih besar atau sama dengan 768px
+            }
+        }
+
+        // Panggil fungsi saat halaman pertama kali dimuat
+        toggleResponsiveClass();
+
+        // Panggil fungsi setiap kali ukuran layar berubah
+        window.addEventListener('resize', toggleResponsiveClass);
+
+        // Fungsi untuk menambah nilai
+        function increaseValue() {
+            const input = document.getElementById('numberInput');
+            const total = document.getElementsByClassName('total')[0];
+            const total2 = document.getElementsByClassName('total')[1];
+
+            const harga = 12000;
+            let curentTotal = parseInt(total.value);
+            let currentValue = parseInt(input.value);
+            input.value = currentValue + 1;
+            total.value = curentTotal + harga;
+            total2.value = curentTotal - harga;
+
+        }
+
+        // Fungsi untuk mengurangi nilai
+        function decreaseValue() {
+            const input = document.getElementById('numberInput');
+            const total = document.getElementsByClassName('total')[0];
+            const total2 = document.getElementsByClassName('total')[1];
+            const harga = 12000;
+            let curentTotal = parseInt(total.value);
+            let currentValue = parseInt(input.value);
+            if (currentValue > 0) { // Pastikan nilai tidak kurang dari 0
+                input.value = currentValue - 1;
+                total.value = curentTotal - harga;
+                total2.value = curentTotal - harga;
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
